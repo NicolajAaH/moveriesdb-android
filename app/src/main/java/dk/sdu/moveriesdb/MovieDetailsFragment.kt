@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 
-class MovieDetailsFragment : Fragment(R.layout.detailed_fragment){
+class MovieDetailsFragment : Fragment(R.layout.detailed_fragment) {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreateView(
