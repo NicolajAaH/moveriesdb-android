@@ -24,12 +24,12 @@ class ListFragment : Fragment(), FragmentManager.OnBackStackChangedListener {
     inner class InitThread : Thread() { //Populate DB
         override fun run() {
             super.run()
-            var movie1 = Movie(1, "Django Unchained", 2012, "Quentin Tarantino", "djangounchained")
-            var movie2 = Movie(2, "Shrek", 2001, "Andrew Adamson", "shrek")
-            var movie3 = Movie(3, "Pulp Fiction", 1994, "Quentin Tarantino", "pulpfiction")
-            var movie4 = Movie(4, "Get Out", 2017, "Jordan Peele", "getout")
-            var movie5 = Movie(5, "Saving Private Ryan", 1998, "Steven Spielberg", "ryan")
-            var movie6 = Movie(6, "Gladiator", 2000, "Ridley Scott", "gladiator")
+            val movie1 = Movie(1, "Django Unchained", 2012, "Quentin Tarantino", "djangounchained")
+            val movie2 = Movie(2, "Shrek", 2001, "Andrew Adamson", "shrek")
+            val movie3 = Movie(3, "Pulp Fiction", 1994, "Quentin Tarantino", "pulpfiction")
+            val movie4 = Movie(4, "Get Out", 2017, "Jordan Peele", "getout")
+            val movie5 = Movie(5, "Saving Private Ryan", 1998, "Steven Spielberg", "ryan")
+            val movie6 = Movie(6, "Gladiator", 2000, "Ridley Scott", "gladiator")
 
             db.movieDao().insert(movie1)
             db.movieDao().insert(movie2)
@@ -69,7 +69,7 @@ class ListFragment : Fragment(), FragmentManager.OnBackStackChangedListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         if (movieList.isEmpty()) {
             Thread.sleep(16) //If its empty, ensure it has enough time to load from DB, max 16ms
@@ -90,9 +90,9 @@ class ListFragment : Fragment(), FragmentManager.OnBackStackChangedListener {
             }
         }
 
-        var recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
-        var layoutManager = LinearLayoutManager(view.context)
+        val layoutManager = LinearLayoutManager(view.context)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
