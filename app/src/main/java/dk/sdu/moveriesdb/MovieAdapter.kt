@@ -33,7 +33,7 @@ class MovieAdapter(private val data: ArrayList<Movie>, val context: Context, pri
         holder.title.text = data[position].title
 
         //Listener for OnClick
-        holder.title.setOnClickListener{
+        holder.itemView.setOnClickListener{
             onItemClicked(data[position])
         }
     }
