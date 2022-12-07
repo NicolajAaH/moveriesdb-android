@@ -71,7 +71,7 @@ class ListFragment : Fragment(), FragmentManager.OnBackStackChangedListener {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
-        if (movieList.isEmpty()) {
+        while (movieList.isEmpty()) {
             Thread.sleep(16) //If its empty, ensure it has enough time to load from DB, max 16ms
         }
 
