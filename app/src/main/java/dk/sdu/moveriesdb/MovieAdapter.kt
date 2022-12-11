@@ -10,11 +10,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dk.sdu.moveriesdb.database.movie.Movie
 
-class MovieAdapter(private val data: ArrayList<Movie>, val context: Context, private val onItemClicked: (Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.ViewHolder>(){
+class MovieAdapter(
+    private val data: ArrayList<Movie>,
+    val context: Context,
+    private val onItemClicked: (Movie) -> Unit
+) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
-    inner class ViewHolder(item : View): RecyclerView.ViewHolder(item){
-        val title : TextView = item.findViewById(R.id.title)
-        val image : ImageView = item.findViewById(R.id.imageView)
+    inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+        val title: TextView = item.findViewById(R.id.title)
+        val image: ImageView = item.findViewById(R.id.imageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,7 +37,7 @@ class MovieAdapter(private val data: ArrayList<Movie>, val context: Context, pri
         holder.title.text = data[position].title
 
         //Listener for OnClick
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             onItemClicked(data[position])
         }
     }

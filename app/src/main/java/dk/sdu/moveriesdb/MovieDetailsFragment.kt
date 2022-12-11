@@ -25,15 +25,15 @@ class MovieDetailsFragment : Fragment(R.layout.detailed_fragment) {
 
         val release = view.findViewById<TextView>(R.id.release)
         release.text = buildString {
-        append("Release year: ")
-        append(requireArguments().getInt("releaseYear").toString())
-    }
+            append("Release year: ")
+            append(requireArguments().getInt("releaseYear").toString())
+        }
 
         val director = view.findViewById<TextView>(R.id.director)
         director.text = buildString {
-        append("Director: ")
-        append(requireArguments().getString("director"))
-    }
+            append("Director: ")
+            append(requireArguments().getString("director"))
+        }
 
         val image = view.findViewById<ImageView>(R.id.movieImage)
         val uri = "@drawable/" + requireArguments().getString("imageReference")
